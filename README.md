@@ -59,7 +59,7 @@ The news articles are linked to the mentioned entity, while the actual text is s
 To run the project on your own database, follow these two steps:
 
 1. Set appropriate database credentials in `.env` file
-2. Remove or set appropriate Cypher examples in `api/fewshot_examples.py` file 
+2. Remove or set appropriate Cypher examples in `api/src/fewshot_examples.py` file 
 
 ## Contributing
 
