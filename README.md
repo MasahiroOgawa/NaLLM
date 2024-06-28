@@ -28,7 +28,7 @@ To simplify the process of running the demos, we have incorporated scripts that 
 
 1. Navigate into the root directory.
 2. Create an env file. You can use the env.example file as a template. (The open API key is optional and can be provided from the UI instead)
-3. run `docker-compose up` to build the images.
+3. run `docker compose up` to build the images.
 
 This will start the backend and frontend servers, and you can access the demos at the following URLs:
 

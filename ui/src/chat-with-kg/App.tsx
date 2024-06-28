@@ -15,23 +15,23 @@ const SEND_REQUESTS = true;
 const chatMessageObjects: ChatMessageObject[] = SEND_REQUESTS
   ? []
   : [
-      {
-        id: 0,
-        type: "input",
-        sender: "self",
-        message:
-          "This is the first message which has decently long text and would denote something typed by the user",
-        complete: true,
-      },
-      {
-        id: 1,
-        type: "text",
-        sender: "bot",
-        message:
-          "And here is another message which would denote a response from the server, which for now will only be text",
-        complete: true,
-      },
-    ];
+    {
+      id: 0,
+      type: "input",
+      sender: "self",
+      message:
+        "This is the first message which has decently long text and would denote something typed by the user",
+      complete: true,
+    },
+    {
+      id: 1,
+      type: "text",
+      sender: "bot",
+      message:
+        "And here is another message which would denote a response from the server, which for now will only be text",
+      complete: true,
+    },
+  ];
 
 const URI =
   import.meta.env.VITE_KG_CHAT_BACKEND_ENDPOINT ??
@@ -73,7 +73,7 @@ function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [apiKey, setApiKey] = useState(loadKeyFromStorage() || "");
   const [sampleQuestions, setSampleQuestions] = useState<string[]>([]);
-  const [text2cypherModel, setText2cypherModel] = useState<string>("gpt-3.5-turbo-0613");
+  const [text2cypherModel, setText2cypherModel] = useState<string>("gpt-4o");
 
   const showContent = serverAvailable && !needsApiKeyLoading;
 
@@ -268,12 +268,12 @@ function App() {
           <button onClick={openModal}>API Key</button>
         </div>
       )}
-        <div className="flex justify-end mr-4">
+      <div className="flex justify-end mr-4">
         <select value={text2cypherModel} onChange={handleModelChange}>
-            <option value="gpt-3.5-turbo-0613">gpt-3.5-turbo</option>
-            <option value="gpt-4">gpt-4</option>
+          <option value="gpt-4o">gpt-4o</option>
+          <option value="gpt-4">gpt-4</option>
         </select>
-        </div>
+      </div>
       <div className="p-6 mx-auto mt-20 rounded-lg bg-palette-neutral-bg-weak min-h-[6rem] min-w-[18rem] max-w-4xl ">
         {!serverAvailable && (
           <div>Server is unavailable, please reload the page to try again.</div>
